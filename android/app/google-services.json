@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "350954059138",
+    "project_id": "emergency-app-bb35f",
+    "storage_bucket": "emergency-app-bb35f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350954059138:android:dcbcfb7e6d94b36ecc0b9b",
+        "android_client_info": {
+          "package_name": "com.example.new_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350954059138-gpa7pc32vc1ribo1tve86o4loghtmdt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1lp1JBChiDPTRLOo02_FE_j5AulrCw0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350954059138-gpa7pc32vc1ribo1tve86o4loghtmdt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
