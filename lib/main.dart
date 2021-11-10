@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:new_app/Authenticate/admin_login.dart';
-//import 'package:new_app/authenticate/adminSign.dart';
 import 'package:new_app/screens/components/cameraWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:new_app/providers/details_provider.dart';
-//import 'package:new_app/screens/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'Authenticate/login.dart';
@@ -14,8 +12,7 @@ import 'screens/history.dart';
 import 'screens/home.dart';
 import 'blocs/application_bloc.dart';
 import 'screens/welcome.dart';
-// import 'screens/tab/smsPage.dart';
-// import 'services/firestore_services.dart';
+//import 'services/firestore_services.dart';
 import 'services/auth_services.dart';
 import 'widget/widget_provider.dart';
 
@@ -64,7 +61,7 @@ class _MyAppState extends State<MyApp> {
             "SignUp":(BuildContext context)=>SignUp(),
             "welcome":(BuildContext context)=>Welcome(),
             'history':(BuildContext context)=>Histories(),
-           'Admin':(BuildContext context)=>AdminLoginPage(),
+            'Admin':(BuildContext context)=>AdminLoginPage(),
           },
 
           ),

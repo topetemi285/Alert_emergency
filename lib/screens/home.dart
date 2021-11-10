@@ -87,21 +87,6 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
               ],
 
 
-                  // bottom: TabBar(
-                  //   tabs: [
-                  //     Tab(
-                  //       child: Text('Emergence'),
-                  //     ),
-                  //     Tab(
-
-                  //       // child: Text('Detail Reports'),
-                  //       child: Text(''),
-                  //     ),  
-                  //   ],
-                  //   controller: _tabController,
-                  //   //indicator: Colors.black,
-                  //   indicatorSize: TabBarIndicatorSize.tab,
-                  // ),
                   bottomOpacity: 1,
                 ),
 
@@ -114,7 +99,6 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                     UserAccountsDrawerHeader(
                       decoration: BoxDecoration(
                           color:Colors.red[400],
-                          // borderRadius:BorderRadius.circular(16),
                       ),
                     
                         
@@ -157,13 +141,6 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                       },
                     ),
                     ListTile(
-                      title:Text("Message"),
-                      leading:Icon(Icons.chat, color:Colors.black),
-                      onTap: (){
-                        Navigator.of(context).pushReplacementNamed("SmsFile");
-                      },
-                    ),
-                    ListTile(
                       title:Text("History", ),
                       leading:Icon(Icons.history_edu_outlined, color:Colors.black),
                       onTap: (){
@@ -194,12 +171,7 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                     ),
 
 
-                    // ListTile(
-                    //   title:Text("Settings"),
-                    //   leading:Icon(Icons.settings, color: Colors.black,),
-                    //   onTap: (){}    
-                    // ),
-
+                    
                     ListTile(
                       title:Text("Sign Out"),
                       leading:Icon(Icons.logout),
@@ -230,12 +202,6 @@ class _WelcomeState extends State<Welcome> with SingleTickerProviderStateMixin {
                   title: Text('Location'),
                 ),
               ],
-              // type: BottomNavigationBarType.shifting,  
-              // currentIndex: _selectedIndex,  
-              // selectedItemColor: Colors.black,  
-              // iconSize: 40,  
-              // onTap: _onItemTapped,  
-              // elevation: 5 
             ),
             // ends here 
           

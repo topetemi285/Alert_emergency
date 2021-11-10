@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 //import 'package:form_demo_app/sign_up.dart';
 
+// import 'home.dart';
+
 class AdminLoginPage extends StatefulWidget {
   AdminLoginPage({Key key}) : super(key: key);
 
@@ -89,56 +91,56 @@ class _AdminLoginState extends State<AdminLoginPage> {
               ),
             ),
 
-            SizedBox(
-              height: 10.0,
-            ),
-            // ignore: deprecated_member_use
-            FlatButton(
-              onPressed: () {
-                //forgot password screen
-              },
-              textColor: Colors.blue,
-              child: Text('Forgot Password ?'),
-            ),
-            Container(
-              height: 50,
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-              // ignore: deprecated_member_use
-              child: RaisedButton(
-                textColor: Colors.white,
-                color: Colors.blue,
-                child: Text('Login'),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16.0))),
-                onPressed: () {},
-              ),
-            ),
+            // SizedBox(
+            //   height: 10.0,
+            // ),
+            // // ignore: deprecated_member_use
+            // FlatButton(
+            //   onPressed: () {
+            //     //forgot password screen
+            //   },
+            //   textColor: Colors.blue,
+            //   child: Text('Forgot Password ?'),
+            // ),
+            // Container(
+            //   height: 50,
+            //   padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+            //   // ignore: deprecated_member_use
+            //   child: RaisedButton(
+            //     textColor: Colors.white,
+            //     color: Colors.blue,
+            //     child: Text('Login'),
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.all(Radius.circular(16.0))),
+            //     onPressed: () {},
+            //   ),
+            // ),
 
-            Container(
-              child: Row(
-                children: <Widget>[
-                  Text('Does not have account?'),
-                  // ignore: deprecated_member_use
-                  FlatButton(
-                    textColor: Colors.blue,
-                    child: Text(
-                      'Sign in',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    onPressed: () {
-                      // signup screen
-                      // Navigator.pushReplacement(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (BuildContext context) => SignUpPage(),
-                      //   ),
-                      // );
-                    },
-                  )
-                ],
-                mainAxisAlignment: MainAxisAlignment.center,
-              ),
-            ),
+            // Container(
+            //   child: Row(
+            //     children: <Widget>[
+            //       Text('Does not have account?'),
+            //       // ignore: deprecated_member_use
+            //       FlatButton(
+            //         textColor: Colors.blue,
+            //         child: Text(
+            //           'Sign in',
+            //           style: TextStyle(fontSize: 20),
+            //         ),
+            //         onPressed: () {
+            //           // signup screen
+            //           // Navigator.pushReplacement(
+            //           //   context,
+            //           //   MaterialPageRoute(
+            //           //     builder: (BuildContext context) => SignUpPage(),
+            //           //   ),
+            //           // );
+            //         },
+            //       )
+            //     ],
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //   ),
+            // ),
           ],
         ),
       ),

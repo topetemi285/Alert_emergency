@@ -33,7 +33,7 @@ class _DetailReportPageState extends State<DetailReportPage> {
 speak()async{
   await _flutterTts.setLanguage("en-US");
   await _flutterTts.setPitch(1);
-  await _flutterTts.speak("Hep! Help!! Help!!!");
+  await _flutterTts.speak("Hep! Help!! Help!!! Am in an emergency situation");
 }
 
 showError(String errormessage){
@@ -56,6 +56,8 @@ showError(String errormessage){
     final detailedProvider = Provider.of<DetailedProvider>(context);
     return Scaffold(
        appBar: AppBar(
+        backgroundColor: Colors.red[400],
+        elevation: 1,
         title: Text('Emegency description'),
         leading: IconButton(
           onPressed: (){
@@ -90,14 +92,14 @@ showError(String errormessage){
                           // ignore: missing_return
                                 validator: (input){
                                   if(input.isEmpty)
-                                    return 'Incident Subject';
+                                    return 'Emergency details';
                                 },
 
                                   decoration: InputDecoration(
                                     
                                     border:OutlineInputBorder(),
-                                    hintText: "Crime",
-                                    labelText: 'Type of Crime',
+                                    hintText: "Enter emergency descripiton",
+                                    labelText: 'Emergency Description',
                                     //prefix: Icon(Icons.),
                               
                                 ),
@@ -107,28 +109,7 @@ showError(String errormessage){
                                     //onSaved: (input)=>_name=input,
                           ),
                             ),
-                          // Padding(
-                          //     padding: EdgeInsets.all(8.0),
-                          //     child:DateTimePicker(
-                          //     initialValue: '',
-                          //     type: DateTimePickerType.date,
-                          //     dateLabelText: 'Select Date of Birth',
-                          //     firstDate: DateTime(1960),
-                          //     lastDate: DateTime.now().add(Duration(days: 365)),
-                          //     validator: (value){
-                          //       return null;
-
-                          //     },
-                          //     onChanged: (value){
-                          //       if(value.isNotEmpty){
-                          //           setState((){
-                          //             _doi = value as TextEditingController;
-                          //         });
-                          //       }
-                          //     },
-        
-                          //   )
-                          // ),
+                          
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: TextFormField(
@@ -140,17 +121,16 @@ showError(String errormessage){
                                     },
 
                                   decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
+                                    // border: OutlineInputBorder(),
                                     labelText: 'Address',
                                     hintText: 'Enter Address'
                                       ),
                                       onChanged: (value){
                                         detailedProvider.changeaAddress(value);
                                 },
-                                    //onSaved: (input)=>_email=input,
                                 ),
                               ),
-                          Row(
+                          Column(
                             children: [
                                Container(
                                  width:260,
@@ -174,41 +154,22 @@ showError(String errormessage){
                                         onChanged: (value){
                                           detailedProvider.changeDescription(value);
                                   },
-                                          //onSaved: (input)=>_email=input,
+                                      
                                   ),
                               ),
                                ),
 
 
-                              // AvatarGlow(
-                              //   // animate: isListening,
-                              // endRadius: 30,
-                              // glowColor: Colors.grey[700],
-                              // child: IconButton(
-                              //   icon: Icon(Icons.mic_none,
-                              //     color: Colors.black,
-                              //       size: 30,
-                              //       ), 
-                              //       onPressed: (){
-                              //         Navigator.of(context).push(
-                              //       MaterialPageRoute(
-                              //         builder:(context)=> SpeechToText(),
-                              //       ),
-                              //     );
-                              //       },
-                                    
-                              //   ),
-                              // ),
                             ],
                          ), 
             
                           Divider(),
                           Padding(
                             padding: const EdgeInsets.only(top:20,left: 10),
-                            child: Text("EVIDENCE OF THE CRIME",
+                            child: Text("Add Emergency images",
                               style: TextStyle(
                                 fontSize: 25,
-                                color: Colors.indigo[900],
+                                color: Colors.grey[600],
                                  fontWeight: FontWeight.bold
                                 ),
                             ),
@@ -227,7 +188,7 @@ showError(String errormessage){
                                     builder: (BuildContext context){
                                     return AlertDialog(
                                       //title: Text('ERROR'),
-                                      content: Text("Report successfully"),
+                                      content: Text("Report successfully submitted"),
                                       actions: [
                                         ElevatedButton(
                                           onPressed: (){
@@ -242,7 +203,9 @@ showError(String errormessage){
                                   showError(error);
                               }   
                             },
-                            child: Text('Report',
+                          
+                          
+                            child: Text('Sumbit',
                               style: TextStyle(
                                 fontSize:20, 
                                 color: Colors.white,
@@ -251,44 +214,15 @@ showError(String errormessage){
                            shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)
                             ),
-                            color: Colors.indigo[900],
+                            
+                            color: Colors.blue[900],
                       ),
                       ],
                     ),
                   ),
                 ),
 
-                // Row(
-                //             children: [
-                //               CircleAvatar(
-                //                 backgroundColor: Colors.orangeAccent,
-                //                 child: IconButton(
-                //                   icon: Icon(
-                //                     Icons.add_a_photo,
-                //                     color: Colors.black,
-                //                     ), 
-                //                     onPressed: () {  },
-                //                 ),
-                //                 ),
-
-                //                 CircleAvatar(
-                //                 backgroundColor: Colors.orangeAccent,
-                //                 child: IconButton(
-                //                   icon: Icon(
-                //                     Icons.record_voice_over,
-                //                     color: Colors.black,
-                //                     ), 
-                //                     onPressed: () { 
-                //                       speak();
-                //                      },
-                //                 ),
-                //                 ),
-                           
-
-
-
-                //             ],
-                //           ),
+              
               ],
             
           ),
@@ -297,12 +231,7 @@ showError(String errormessage){
     );
   }
 
-//   Future toggleRecording()=>SpeechApi.toggleRecording(
-//     onResult: (text)=>setState(()=> this.text = text,
-//     ), 
-//     onListening: (isListening) {  
-//        setState(()=>this.isListening = isListening);
-//     });
+
  }
 
 

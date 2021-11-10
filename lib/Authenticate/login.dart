@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:email_validator/email_validator.dart';
 
-import 'SignUp.dart';
+import 'signup.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key key}) : super(key: key);
@@ -153,47 +153,56 @@ class _SignInState extends State<SignIn> {
                       // padding: const EdgeInsets.all(20),
                       padding: const EdgeInsets.only(bottom:10, top: 0, left:20, right: 20),
                       
+                    child: Row(
+                    children: <Widget>[
+                      IconButton(icon: Icon(Icons.email), onPressed: null),
+                      Expanded(
                       child: TextFormField(
                         validator: (value) => EmailValidator.validate(value)
                             ? null
                             : "Please enter a valid email",
                         decoration: InputDecoration(
                           
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0)),
+                          // border: OutlineInputBorder(
+                          //     borderRadius: BorderRadius.circular(20.0)),
                           labelText: 'Email',
                           hintText: 'abcd@mail.com',
-                          prefix: Icon(Icons.email),
+                          // prefix: Icon(Icons.email),
                         ),
                         onSaved: (input) => _email = input,
                       ),
-                    ),
+                    ),]
+                    ),),
 
                     Padding(
                       // padding: const EdgeInsets.all(20),
                       padding: const EdgeInsets.only(bottom:20, top: 0, left:20, right: 20),
+                    child: Row(
+                      children: <Widget>[
+                      IconButton(icon: Icon(Icons.visibility_off_outlined), onPressed: null),
+                      Expanded(
                       child: TextFormField(
                         // ignore: missing_return
                         validator: (input) {
                           if (input.length < 6)
-                            return 'Provide Minimum of 6 character with uppercase\nand a character';
+                            return 'Password is miminum 6 character with uppercase\nand a character';
                         },
 
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
+                          // border: OutlineInputBorder(
+                          //   borderRadius: BorderRadius.circular(20.0),
+                          // ),
                           hintText: "Password",
                           labelText: 'Password',
-                          prefix: Icon(Icons.lock_outlined),
+                          // suffixIcon: Icon(Icons.lock_outlined),
                         ),
                         obscureText: true,
                         onSaved: (input) => _password = input,
                       ),
-                    ),
+                    ),],),),
 
                     //forget password section
-                    // ignore: deprecated_member_use
+                  
                     FlatButton(
                       onPressed: () {
                         //forgot password screen
@@ -242,13 +251,7 @@ class _SignInState extends State<SignIn> {
               ),
             ),
 
-            //  GestureDetector(
-            //    child: Padding(
-            //      padding: const EdgeInsets.all(10.0),
-            //      child: Text('Create an account?', style: TextStyle(fontSize: 20),),
-            //    ),
-            //    onTap: navigateToSignUp,
-            //  )
+            
           ],
         ),
       ),

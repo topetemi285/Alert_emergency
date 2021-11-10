@@ -16,7 +16,7 @@ class EmergencePage extends StatefulWidget {
 }
 
 class _EmergencePageState extends State<EmergencePage> {
-  final number = '08138808281';
+  final number = '';
 
  Emergence emerg =Emergence();
 
@@ -42,7 +42,7 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
     return users
     .doc(uid)
     .collection("emergence")
-    .add({"emergence": "peter you need to save someone",
+    .add({"emergence": "Am in an emergency situation, please help",
     "latitude":lati,
     "longitude":longi});
   }
@@ -55,7 +55,7 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
   checkAuthentication () async{
     _auth.authStateChanges().listen((user) {
       if(user==null){
-        Navigator.of(context).pushReplacementNamed("start");
+        Navigator.of(context).pushReplacementNamed("welcome");
       }
      });
   }
@@ -143,36 +143,6 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
                         ),
                   ),
 
-               
-
-                  
-                  
-                          
-                      
-                    
-                // Container(
-                //   child: Image(
-                //    image:AssetImage('images/gym.jpg')
-                //     ),
-                //   ),
-
-                  // RaisedButton(
-                  //     padding: EdgeInsets.only(left: 10, right: 30),
-                  //     onPressed:(){
-                  //       signOut();
-                  //     },
-                  //     child: Text('Sign Out',
-                  //             style: TextStyle(
-                  //               fontSize:20, 
-                  //               color: Colors.white,
-                  //               fontWeight: FontWeight.bold ),),
-
-                  //           shape: RoundedRectangleBorder(
-                  //               borderRadius: BorderRadius.circular(10)
-                  //           ),
-                  //           color: Colors.deepOrange,
-                  //     ),
-
                   Container(
                     child:Container(
                       width:330, height: 200,
@@ -183,10 +153,21 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
                         ),
                         // color: Colors.grey[50],
                         // elevation: 10,
-                        child: Row(
+                        child: Column(
                           // mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,  
                           children: <Widget>[
+                            Padding( 
+                              padding: EdgeInsets.only(top:5.0, bottom: 0.0, left:5.0, right: 5.0),
+                              child: Text(
+                                "Just tap the button ",
+                                textAlign: TextAlign.center,
+                                style:TextStyle(
+                                  color: Colors.blue[400],
+                                  // fontWeight: FontWeight.w500,
+                                  fontFamily: 'Open Sans',
+                                  fontSize: 20),
+                              ),),
                             RaisedButton(
                               onPressed: (){Navigator.push(
                                   context,
@@ -194,6 +175,7 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
                                     builder: (context) => DetailReportPage()),
                                 );
                              },
+                             
                               child: Text("Description",
                                 style: TextStyle(
                                   fontSize: 20,
@@ -206,25 +188,6 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
                               ),
 
 
-                              RaisedButton(
-                                 onPressed: (){
-                                DetailReportPage();
-                              },
-                              
-                              child: Text("Description",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold
-                                ),
-                              ),
-                             
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16)),
-                                color: Colors.blue,
-                                
-                              ),
-                                  
-                            
                             
                           ],  
                         )
@@ -233,53 +196,6 @@ CollectionReference users = FirebaseFirestore.instance.collection('users');
                   ),
 
 
-                  SizedBox(height: 150,),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: AvatarGlow(
-                        endRadius: 100,
-                        glowColor: Colors.grey,
-                        duration: Duration(milliseconds: 2000),
-                        repeat: true,
-                        repeatPauseDuration: Duration(milliseconds: 100),
-                        child: Material(
-                          elevation: 8.0,
-                          shape: CircleBorder(),
-                          child: CircleAvatar(
-                            radius: 40,
-                            backgroundColor: Colors.white,
-                            child: IconButton(
-                              icon: Icon
-                              (
-                                Icons.call,
-                                color: Colors.red[700],
-                                        size: 36,
-                              ), 
-                                onPressed: () async{
-                                      launch('tel://$number');
-                                      await FlutterPhoneDirectCaller.callNumber(number);
-                                }
-                              ),
-                          ),
-                        ),
-                        ),
-                  ),
-
-
-                //       CircleAvatar(
-                //         backgroundColor: Colors.red,
-                //         child: IconButton(
-                //            onPressed: () async{
-                //           launch('tel://$number');
-                //           await FlutterPhoneDirectCaller.callNumber(number);
-                //         }, 
-                //         icon: Icon(Icons.call,
-                //         color: Colors.white,
-                        
-                //         )
-                //   ),
-                        
-                // )
             ],
           ),
       ),
