@@ -16,7 +16,7 @@ class EmergencePage extends StatefulWidget {
 }
 
 class _EmergencePageState extends State<EmergencePage> {
-  final number = '08138808281';
+  final number = '';
 
   Emergence emerg = Emergence();
 

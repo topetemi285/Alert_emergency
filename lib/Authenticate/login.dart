@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:email_validator/email_validator.dart';
 
-import 'SignUp.dart';
+import 'signup.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key key}) : super(key: key);
